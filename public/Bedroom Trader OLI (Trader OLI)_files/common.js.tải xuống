@@ -1,0 +1,229 @@
+"use strict";
+$(document).ready(function () {
+  var banners_swiper = new Swiper(".section_nft .swiper", {
+    loop: true,
+    effect: "fade",
+    fadeEffect: {
+      crossFade: false,
+    },
+    slidesPerView: 1,
+    spaceBetween: 0,
+    watchOverflow: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    preventClicks: false,
+    pagination: false,
+  });
+
+  var lastScrollTop1 = 0;
+  var delta1 = 5;
+
+  var thisOffset = $(this).scrollTop()+ $(".header_wrap").outerHeight();
+
+  var intro_top = $(".section_intro").offset().top,
+    intro_half = intro_top + $(".section_intro").outerHeight() * 0.3;
+  var about_top = $(".section_about").offset().top,
+    about_half = about_top + $(".section_about").outerHeight() * 0.3;
+  var roadmap_top = $(".section_roadmap").offset().top,
+    roadmap_half = roadmap_top + $(".section_roadmap").outerHeight() * 0.3;
+  var token_top = $(".section_token").offset().top,
+    token_half = token_top + $(".section_token").outerHeight() * 0.3;
+  var nft_top = $(".section_nft").offset().top,
+    nft_half = nft_top + $(".section_nft").outerHeight() * 0.3;
+
+  if (thisOffset + $(window).height() > intro_top) {
+    $(".section_intro").addClass("active");
+  }
+  if (thisOffset + $(window).height() > about_top) {
+    $(".section_about").addClass("active");
+  }
+  if (thisOffset + $(window).height() > roadmap_top) {
+    $(".section_roadmap").addClass("active");
+  }
+  if (thisOffset + $(window).height() > token_top) {
+    $(".section_token").addClass("active");
+  }
+  if (thisOffset + $(window).height() > nft_top) {
+    $(".section_nft").addClass("active");
+  }
+
+  if (thisOffset + $(window).height() > intro_top) {
+    $(".header_wrap ul li button").removeClass("active");
+    $(".header_wrap ul li button[key=1]").addClass("active");
+  }
+  if (thisOffset + $(window).height() > about_half) {
+    $(".header_wrap ul li button").removeClass("active");
+    $(".header_wrap ul li button[key=2]").addClass("active");
+  }
+  if (thisOffset + $(window).height() > roadmap_half) {
+    $(".header_wrap ul li button").removeClass("active");
+    $(".header_wrap ul li button[key=3]").addClass("active");
+  }
+
+  if (thisOffset + $(window).height() > token_half) {
+    $(".header_wrap ul li button").removeClass("active");
+    $(".header_wrap ul li button[key=4]").addClass("active");
+  }
+
+  if (thisOffset + $(window).height() > nft_half) {
+    $(".header_wrap ul li button").removeClass("active");
+    $(".header_wrap ul li button[key=5]").addClass("active");
+  }
+
+  $(window)
+    .scroll(function () {
+      thisOffset = $(this).scrollTop()+ $(".header_wrap").outerHeight();
+
+      intro_top = $(".section_intro").offset().top;
+      intro_half = intro_top + $(".section_intro").outerHeight() * 0.3;
+      about_top = $(".section_about").offset().top;
+      about_half = about_top + $(".section_about").outerHeight() * 0.3;
+      roadmap_top = $(".section_roadmap").offset().top;
+      roadmap_half = roadmap_top + $(".section_roadmap").outerHeight() * 0.3;
+      token_top = $(".section_token").offset().top;
+      token_half = token_top + $(".section_token").outerHeight() * 0.3;
+      nft_top = $(".section_nft").offset().top;
+      nft_half = nft_top + $(".section_nft").outerHeight() * 0.3;
+
+
+      if (Math.abs(lastScrollTop1 - thisOffset) <= delta1) return;
+
+      if (thisOffset > lastScrollTop1) {
+        // Scroll down
+
+        if (thisOffset + $(window).height() > intro_top) {
+          $(".section_intro").addClass("active");
+        }
+        if (thisOffset + $(window).height() > about_top) {
+          $(".section_about").addClass("active");
+        }
+        if (thisOffset + $(window).height() > roadmap_top) {
+          $(".section_roadmap").addClass("active");
+        }
+        if (thisOffset + $(window).height() > token_top) {
+          $(".section_token").addClass("active");
+        }
+        if (thisOffset + $(window).height() > nft_top) {
+          $(".section_nft").addClass("active");
+        }
+
+        if (thisOffset + $(window).height() > intro_top) {
+          $(".header_wrap ul li button").removeClass("active");
+          $(".header_wrap ul li button[key=1]").addClass("active");
+        }
+        if (thisOffset + $(window).height() > about_half) {
+          $(".header_wrap ul li button").removeClass("active");
+          $(".header_wrap ul li button[key=2]").addClass("active");
+        }
+        if (thisOffset + $(window).height() > roadmap_half) {
+          $(".header_wrap ul li button").removeClass("active");
+          $(".header_wrap ul li button[key=3]").addClass("active");
+        }
+      
+        if (thisOffset + $(window).height() > token_half) {
+          $(".header_wrap ul li button").removeClass("active");
+          $(".header_wrap ul li button[key=4]").addClass("active");
+        }
+      
+        if (thisOffset + $(window).height() > nft_half) {
+          $(".header_wrap ul li button").removeClass("active");
+          $(".header_wrap ul li button[key=5]").addClass("active");
+        }
+      } else {
+        // Scroll Up
+        if (thisOffset + $(window).height() < intro_top) {
+          $(".section_intro").removeClass("active");
+        }
+        if (thisOffset + $(window).height() < about_top) {
+          $(".section_about").removeClass("active");
+        }
+        if (thisOffset + $(window).height() < roadmap_top) {
+          $(".section_roadmap").removeClass("active");
+        }
+        if (thisOffset + $(window).height() < token_top) {
+          $(".section_token").removeClass("active");
+        }
+        if (thisOffset + $(window).height() < nft_top) {
+          $(".section_nft").removeClass("active");
+        }
+
+        if (thisOffset > intro_top) {
+          $(".header_wrap ul li button").removeClass("active");
+          $(".header_wrap ul li button[key=1]").addClass("active");
+        }
+        if (thisOffset > about_top) {
+          $(".header_wrap ul li button").removeClass("active");
+          $(".header_wrap ul li button[key=2]").addClass("active");
+        }
+        if (thisOffset > roadmap_top) {
+          $(".header_wrap ul li button").removeClass("active");
+          $(".header_wrap ul li button[key=3]").addClass("active");
+        }
+        if (thisOffset > token_top) {
+          $(".header_wrap ul li button").removeClass("active");
+          $(".header_wrap ul li button[key=4]").addClass("active");
+        }
+        if (thisOffset > nft_top) {
+          $(".header_wrap ul li button").removeClass("active");
+          $(".header_wrap ul li button[key=5]").addClass("active");
+        }
+      }
+      lastScrollTop1 = thisOffset;
+    })
+    .trigger("scroll");
+
+  $(".btn_scrollTop").click(function (e) {
+    $("html, body").animate({ scrollTop: 0 }, 680);
+    e.preventDefault();
+  });
+  $(".header_wrap ul li button").click(function (e) {
+    var key = $(this).attr("key");
+    var result = $(".header_wrap").outerHeight();
+    if (key == 1) {
+      result = intro_top - result;
+    } else if (key == 2) {
+      result = about_top - result;
+    } else if (key == 3) {
+      result = roadmap_top - result;
+    } else if (key == 4) {
+      result = token_top - result;
+    } else if (key == 5) {
+      result = nft_top - result;
+    }
+    $("html, body").animate({ scrollTop: result }, 680);
+    e.preventDefault();
+  });
+
+  // // 팝업 보이기
+  // $("[data-role='popup_trigger']").click(function(e) {
+  //     var popupId = $(this).attr("data-target");
+  //     $("[popup-id='" + popupId + "']").addClass("active");
+  //     $("body").css('overflow','hidden');
+  //     e.preventDefault();
+  // });
+
+  // // 팝업 숨기기
+  // $("[data-role='popup_dismiss']").click(function(e) {
+  //     var popupId = $(this).parents(".popup_wrap").attr("popup-id");
+  //     dismissPopup(popupId);
+  //     e.preventDefault();
+  // });
+
+  //     showPopup("popup_notice");
+});
+
+/**
+ * 팝업을 숨긴다.
+ * @param popupId 팝업 아이디
+ */
+function dismissPopup(popupId) {
+  $("[popup-id='" + popupId + "']").removeClass("active");
+  $("body").css("overflow", "auto");
+}
+
+function showPopup(popupId) {
+  $("[popup-id='" + popupId + "']").addClass("active");
+  $("body").css("overflow", "hidden");
+}
