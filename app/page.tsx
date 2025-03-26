@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
+import type { HTMLMotionProps } from "framer-motion";
+import type { FC } from "react";
 
-const MotionSection = motion.section;
+const MotionSection: FC<HTMLMotionProps<"section">> = motion.section;
 
 export default function HomePage() {
   return (
