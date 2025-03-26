@@ -1,10 +1,9 @@
 'use client';
-
-import { motion } from 'framer-motion';
+import MotionSection from './MotionSection';
 
 export default function HomePage() {
   return (
-    <motion.section
+    <MotionSection
       className="text-center py-16"
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
@@ -14,6 +13,6 @@ export default function HomePage() {
       <p className="text-lg text-gray-600">
         The ultimate platform to trade and explore interior bedroom setups.
       </p>
-    </motion.section>
+    </MotionSection>
   );
 }
