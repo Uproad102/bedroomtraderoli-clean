@@ -1,8 +1,8 @@
-import { motion } from "framer-motion";
-import type { HTMLMotionProps } from "framer-motion";
-import type { FC } from "react";
+'use client'
 
-const MotionSection: FC<HTMLMotionProps<"section">> = motion.section;
+import { motion } from 'framer-motion'
+
+const MotionSection = motion.section
 
 export default function HomePage() {
   return (
@@ -12,7 +12,7 @@ export default function HomePage() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
     >
-      {/* Nội dung khác ở đây */}
+      <h1 className="text-4xl font-bold">Welcome to My Site</h1>
     </MotionSection>
-  );
+  )
 }
