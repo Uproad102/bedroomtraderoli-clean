@@ -1,8 +1,11 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, MotionProps } from 'framer-motion'
+import { HTMLAttributes } from 'react'
 
-const MotionSection = motion.section
+type MotionSectionProps = HTMLAttributes<HTMLElement> & MotionProps
+
+const MotionSection = motion.section as React.FC<MotionSectionProps>
 
 export default function HomePage() {
   return (
