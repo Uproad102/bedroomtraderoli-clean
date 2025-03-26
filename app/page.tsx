@@ -1,20 +1,26 @@
-// app/page.tsx
-"use client";
+'use client';
+import { motion } from 'framer-motion';
+import type { HTMLAttributes } from 'react';
 
-import { motion } from "framer-motion";
+type MotionSectionProps = HTMLAttributes<HTMLElement> & {
+  initial?: Record<string, any>;
+  animate?: Record<string, any>;
+  transition?: Record<string, any>;
+};
+
+const MotionSection = (props: MotionSectionProps) => (
+  <motion.section {...props} />
+);
 
 export default function HomePage() {
   return (
-    <motion.section
+    <MotionSection
       className="text-center py-16"
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
     >
-      <h1 className="text-4xl font-bold mb-4">Welcome to BedroomTraderOLI</h1>
-      <p className="text-lg text-gray-600">
-        Your go-to platform for room trading and more!
-      </p>
-    </motion.section>
+      <h1 className="text-4xl font-bold">Xin chào từ trang chủ!</h1>
+    </MotionSection>
   );
 }
