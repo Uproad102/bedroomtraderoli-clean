@@ -6,7 +6,7 @@ import { FaTwitter, FaTelegramPlane, FaDiscord } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { HTMLAttributes } from "react";
 
-const MotionSection = motion.section as React.ComponentType<HTMLAttributes<HTMLElement>>;
+const MotionSection = motion.section as unknown as React.FC<React.HTMLAttributes<HTMLElement>>;
 
 export default function HomePage() {
   return (
