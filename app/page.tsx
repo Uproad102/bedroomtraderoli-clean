@@ -1,5 +1,5 @@
 'use client';
-import MotionSection from './MotionSection';
+import MotionSection from "../components/MotionSection";
 
 export default function HomePage() {
   return (
